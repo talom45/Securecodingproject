@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compactible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+        <title> Secure Coding Login and Sign Up page </title>
+        <link rel= "stylesheet" href="mystyles.css">
+    </head>
+    <body>
+
+        <header>
+            <h2 class="logo"></h2>
+            <nav class="navigation">
+                <a href="H230761J Secure coding pract.html">Home</a>
+                <a href="#">Contacts</a>
+                <button class="btnlogin-popup">Login</button>
+            </nav>
+        </header>
+
+        <div class="wrapper">
+            <span class="icon-close">x</span>
+            <div class="form-box login" >
+                <h2>Login</h2>
+                <form action="#" th:action="@{/register}" th:object="${user}" method="post">
+                    <div class="input-box">
+                        <span class="icon"></span>
+                        <input type="email"  th:field="*{email}" required>
+                        <label>Email</label>
+                    </div> 
+                    <div class="input-box">
+                        <span class="icon"></span>
+                        <input type="password" th:field="*{password}" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remeber-forget">
+                        <label> <input type="checkbox">
+                        Remember me </label>
+                        <a href="#">Forgot password?</a>
+                    </div>
+                        <button type="submit" class="btn">login</button>
+                    <div class="login-sign-up">
+                        <p>Don't have an account? <a href="#" class="registeration-link">Sign Up</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+            <div class="form-box sign-up" >
+                <h2>Sign Up</h2>
+                <form action="#" th:action="@{/register}" th:object="${user}" method="post">
+                    <div class="input-box">
+                        <span class="icon"></span>
+                        <input type="text" id="regNumber" name="regNumber" pattern="[A-Z]{1}[0-9]{6}[A-Z]{1}" 
+                        minlength="8" maxlength="8" required placeholder="H190000K" th:field="*{regNumber}">
+                        <label>Registration Number</label>
+                    </div> 
+            
+                    <div class="input-box">
+                        <span class="icon"></span>
+                        <input type="email" th:field="*{email}"  required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"></span>
+                        <input type="password" th:field="*{password}" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remeber-forget">
+                        <label> <input type="checkbox">
+                        agree to terms & conditions</label>
+                    </div>
+                        <button type="submit" class="btn">Sign Up</button>
+                    <div class="login-sign-up">
+                        <p>Already have an account? <a href="#" class="login-link">Login</a>
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+       <script src="script.js"></script>
+    </body>
+</html>
